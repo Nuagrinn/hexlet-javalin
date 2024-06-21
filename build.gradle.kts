@@ -3,14 +3,19 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     id("java")
+    application
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+application {
+    mainClass.set("org.example.hexlet.HelloWorld")
+}
 
 repositories {
     mavenCentral()
 }
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
